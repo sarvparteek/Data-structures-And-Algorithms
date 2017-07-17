@@ -79,6 +79,7 @@ class OrGate(BinaryGate):
             return 0
 
 class NandGate(AndGate):
+
     def performGateLogic(self):
         if super().performGateLogic() == 1:
             return 0
@@ -86,6 +87,7 @@ class NandGate(AndGate):
             return 1
 
 class NorGate(OrGate):
+
     def performGateLogic(self):
         if super().performGateLogic() == 1:
             return 0
@@ -140,14 +142,24 @@ class Connector:
 
 
 def main():
-   g1 = AndGate("G1")
-   g2 = AndGate("G2")
-   g3 = OrGate("G3")
-   g4 = NotGate("G4")
-   c1 = Connector(g1,g3)
-   c2 = Connector(g2,g3)
-   c3 = Connector(g3,g4)
-   print(g4.getOutput())
+    #Two AND gates feed into an OR gate. The OR gate then feeds into a NOT gate
+    g1 = AndGate("G1")
+    g2 = AndGate("G2")
+    g3 = OrGate("G3")
+    g4 = NotGate("G4")
+    c1 = Connector(g1,g3)
+    c2 = Connector(g2,g3)
+    c3 = Connector(g3,g4)
+    print(g4.getOutput())
+
+    #Two NAND gates feed into a NOR gate. The NOR gate feeds into a NOT gate
+    g5 = AndGate("G5")
+    g6 = AndGate("G6")
+    g7 = OrGate("G7")
+    g8 = NotGate("G8")
+    c4 = Connector(g5, g7)
+    c5 = Connector(g6, g7)
+    c6 = Connector(g7, g8)
+    print(g8.getOutput())
 
 main()
-
