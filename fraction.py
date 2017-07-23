@@ -8,7 +8,7 @@
 
 # Greatest common Divisor
 def gcd(m, n):
-  while m % n != 0:
+  while m % n != 0: #this step ensures that a denominator of 0 won't be allowed - it will raise a divide by zero exception
       oldm = m
       oldn = n
 
