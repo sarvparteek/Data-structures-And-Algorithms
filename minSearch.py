@@ -14,27 +14,32 @@ class listManipulator():
 
     def fastSearch(self):
         minimum = self.userList[0]
-        steps = 0
+        steps = 1 # for minimum assignment
         for i in self.userList:
-            steps += 1
+            steps += 1 # for if conditional
             if i < minimum:
                 minimum = i
+                steps += 1 #for minimum assignment
         return minimum,steps
 
     def slowSearch(self):
         minimum = self.userList[0]
-        steps = 0
+        steps = 1 # for minimum assignment
         for i in self.userList:
             isMin = True
+            steps += 1 # for isMin assignment
             for j in self.userList:
-                steps += 1
+                steps += 1 #for if conditional
                 if j < i :
                     isMin = False
+                    steps += 1 # for isMin assignment
 
+            steps += 1 #for if conditional
             if isMin:
                 minimum = i
+                steps += 1 #for minimum assignment
         return minimum,steps
-    
+
     def getSize(self):
         return len(self.userList)
 
