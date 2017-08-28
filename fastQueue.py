@@ -7,7 +7,7 @@ __author__ = 'sarvps'
     Data Structures & Algorithms by Miller
     Quiz 1, Problem 4
     Brief: Implements a queue such that both enqueue and dequeue have O(1) performance on average. 
-            In this case it means that most of the time enqueue and dequeue will be O(1) except in one particular 
+            In this case, it means that most of the time enqueue and dequeue will be O(1) except in one particular 
             circumstance, where dequeue will be O(n)
     References: https://stackoverflow.com/questions/69192/how-to-implement-a-queue-using-two-stacks
 '''
@@ -63,7 +63,7 @@ class Queue:
 
     def getQueue(self):
         qList = []
-        reverseOutput = []  # Note that we can't use reverse() method since it reverses the actual                     list
+        reverseOutput = []  # Note that we can't use reverse() method since it reverses the actual list
         if (len(self.outputStack.getStack())):
             for i in range(len(self.outputStack.getStack()) - 1, -1, -1):
                 reverseOutput.append(self.outputStack.getStack()[i])
@@ -96,4 +96,4 @@ def main():
     print("After dequeueing")
     print(q.getQueue())
 
-# main() #Test
+#main() #Test
