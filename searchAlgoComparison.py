@@ -41,6 +41,21 @@ def binarySearch(alist, item):
 
     return found
 
+b = -10;
+rad = 5;
+c = 2;
+d1, d2 = b + rad, b - rad
+print(d1, d2)
+
+xr1 = -2*c / (d1 if abs(d1) > abs(d2) else d2)
+xr2 = -2*c / (d2 if abs(d1) > abs(d2) else d1)
+print(xr1, xr2)
+
+d1, d2 = b + rad, b - rad
+xr11 = -2*c / max(abs(d1), abs(d2))
+xr21 = -2*c / min(abs(d1), abs(d2))
+print(xr11, xr21)
+
 test_ranges = range(100,10001,200)
 seq_search_times = []
 bin_search_times = []
